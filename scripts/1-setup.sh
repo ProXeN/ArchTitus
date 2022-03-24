@@ -52,7 +52,7 @@ sed -i 's/^#es_ES.UTF-8 UTF-8/es_ES.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 timedatectl --no-ask-password set-timezone ${TIMEZONE}
 timedatectl --no-ask-password set-ntp 1
-localectl --no-ask-password set-locale LANG="sn_ES.UTF-8" LC_TIME="es_ES.UTF-8"
+localectl --no-ask-password set-locale LANG="es_ES.UTF-8" LC_TIME="es_ES.UTF-8"
 ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 # Set keymaps
 localectl --no-ask-password set-keymap ${KEYMAP}
