@@ -78,7 +78,7 @@ elif [[ "${DESKTOP_ENV}" == "openbox" ]]; then
     sed -i 's/#greeter-session=example.*/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
   fi
 
-elif [[ "${DESKTOP_ENV}" == "bspwm" ]]; then
+elif [[ ${DESKTOP_ENV} == "bspwm" ]]; then
   systemctl enable sddm.service
     if [[ ${INSTALL_TYPE} == "FULL" ]]; then
       echo [Theme] >>  /etc/sddm.conf
