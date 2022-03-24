@@ -32,7 +32,7 @@ do
     continue
   fi
   echo "INSTALLING: ${line}"
-  $AUR_HELPER -S --noconfirm --needed ${line}
+  sudo pacman -S --noconfirm --needed ${line}
 done
 
 

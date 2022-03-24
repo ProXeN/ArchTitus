@@ -1,3 +1,4 @@
+betterlockscreen
 brave-bin
 github-desktop-bin
 local-by-flywheel-bin
@@ -12,6 +13,7 @@ nuclear-player-bin
 obs-studio-tytan652
 ocs-url
 onlyoffice-bin
+picom-ibhagwan-git
 popcorntime-bin
 sddm-nordic-theme-git
 spicetify-cli
