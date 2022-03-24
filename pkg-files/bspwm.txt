@@ -1,0 +1,12 @@
+bspwm
+sxhkd
+nitrogen
+rofi
+picom-ibhagwan-git
+polybar
+betterlockscreen
+dunst
+sddm
+thunar
+thunar-volman
+lxappearance

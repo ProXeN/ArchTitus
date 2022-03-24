@@ -78,6 +78,13 @@ elif [[ "${DESKTOP_ENV}" == "openbox" ]]; then
     sed -i 's/#greeter-session=example.*/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
   fi
 
+elif [[ "${DESKTOP_ENV}" == "bspwm" ]]; then
+  systemctl enable sddm.service
+    if [[ ${INSTALL_TYPE} == "FULL" ]]; then
+      echo [Theme] >>  /etc/sddm.conf
+      echo Current=Nordic >> /etc/sddm.conf
+    fi
+
 else
   if [[ ! "${DESKTOP_ENV}" == "server"  ]]; then
   sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter
@@ -90,19 +97,11 @@ echo -ne "
                     Enabling Essential Services
 -------------------------------------------------------------------------
 "
-systemctl enable cups.service
-echo "  Cups enabled"
 ntpd -qg
 systemctl enable ntpd.service
 echo "  NTP enabled"
-systemctl disable dhcpcd.service
-echo "  DHCP disabled"
-systemctl stop dhcpcd.service
-echo "  DHCP stopped"
 systemctl enable NetworkManager.service
 echo "  NetworkManager enabled"
-systemctl enable bluetooth
-echo "  Bluetooth enabled"
 systemctl enable avahi-daemon.service
 echo "  Avahi enabled"
 
@@ -122,25 +121,6 @@ mkdir -p /etc/conf.d/
 cp -rfv ${SNAPPER_CONF_D} /etc/conf.d/
 
 fi
-
-echo -ne "
--------------------------------------------------------------------------
-               Enabling (and Theming) Plymouth Boot Splash
--------------------------------------------------------------------------
-"
-PLYMOUTH_THEMES_DIR="$HOME/ArchTitus/configs/usr/share/plymouth/themes"
-PLYMOUTH_THEME="arch-glow" # can grab from config later if we allow selection
-mkdir -p /usr/share/plymouth/themes
-echo 'Installing Plymouth theme...'
-cp -rf ${PLYMOUTH_THEMES_DIR}/${PLYMOUTH_THEME} /usr/share/plymouth/themes
-if  [[ $FS == "luks"]]; then
-  sed -i 's/HOOKS=(base udev*/& plymouth/' /etc/mkinitcpio.conf # add plymouth after base udev
-  sed -i 's/HOOKS=(base udev \(.*block\) /&plymouth-/' /etc/mkinitcpio.conf # create plymouth-encrypt after block hook
-else
-  sed -i 's/HOOKS=(base udev*/& plymouth/' /etc/mkinitcpio.conf # add plymouth after base udev
-fi
-plymouth-set-default-theme -R arch-glow # sets the theme and runs mkinitcpio
-echo 'Plymouth theme installed'
 
 echo -ne "
 -------------------------------------------------------------------------
