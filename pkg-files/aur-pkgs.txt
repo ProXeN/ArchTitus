@@ -10,6 +10,7 @@ nordic-theme-git
 nordzy-cursors
 nordzy-icon-theme-git
 nuclear-player-bin
+polybar
 obs-studio-tytan652
 ocs-url
 onlyoffice-bin

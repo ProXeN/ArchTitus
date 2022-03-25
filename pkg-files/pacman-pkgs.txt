@@ -29,6 +29,7 @@ calibre
 cifs-utils
 cmatrix
 code
+cool-retro-term
 cronie
 dialog
 discord
@@ -73,6 +74,7 @@ mpd
 ncmpcpp
 neofetch
 neovim
+nm-applet
 ntfs-3g
 ntp
 obsidian

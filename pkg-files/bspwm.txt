@@ -2,7 +2,6 @@ bspwm
 sxhkd
 nitrogen
 rofi
-polybar
 dunst
 sddm
 thunar
