@@ -3,7 +3,8 @@ sxhkd
 nitrogen
 rofi
 dunst
-sddm
+lightdm
+lightdm-gtk-greeter
 thunar
 thunar-volman
 lxappearance

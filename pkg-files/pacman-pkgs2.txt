@@ -38,6 +38,8 @@ dnsmasq
 dust
 efibootmgr
 exfat-utils
+filezilla
+flameshot
 flex
 fuse2
 fuse3
@@ -58,6 +60,9 @@ gst-plugins-ugly
 gvfs-smb
 haveged
 htop
+Inkscape
+kdenlive
+keepassxc
 kitty
 kvantum
 libtool
@@ -72,11 +77,14 @@ neovim
 nm-applet
 ntfs-3g
 ntp
+obsidian
 openssh
 os-prober
 powerline-fonts
 pulseaudio
 pulseaudio-alsa
+qbittorrent
+qemu
 ranger
 snapper
 sshfs
@@ -87,6 +95,7 @@ ttf-opensans
 unrar
 unzip
 viewnior
+virt-manager
 which
 xarchiver
 xfce4-appfinder
