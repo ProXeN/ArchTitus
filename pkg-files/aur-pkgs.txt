@@ -1,5 +1,4 @@
 betterlockscreen
-brave-bin
 nordic-darker-standard-buttons-theme
 nordic-darker-theme
 nordic-theme-git
